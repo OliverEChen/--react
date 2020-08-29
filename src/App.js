@@ -1,11 +1,15 @@
 import React from 'react';
-import { Button } from 'antd';
+import {Route,Switch} from 'react-router-dom'
+import Login from './pages/login/login.jsx'
+import Admin from './pages//admin/admin.jsx'
 
 function App() {
   return (
-    <div>
-      App
-      <Button type="primary">Button</Button>
+    <div className="app">
+      <Switch>
+        <Route path="/login" component={Login}/>
+        <Route path="/admin" component={Admin}/>
+      </Switch>
     </div>
   );
 }
