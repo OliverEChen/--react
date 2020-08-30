@@ -1,9 +1,14 @@
 import React,{Component} from 'react'
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import {connect} from 'react-redux'
+import {createDemo1Action} from '../../redux/actions/test_action'
 import './css/login.less'
 import logo from './images/logo.png'
 
 class Login extends Component {
+  componentDidMount(){
+    console.log(this.props);
+  }
 
   handleSubmit = e => {
     e.preventDefault();
@@ -83,4 +88,10 @@ class Login extends Component {
     )
   }
 }
-export default Form.create({ name: 'Login' })(Login);
+Form.create({ name: 'Login' })(Login);
+export default connect(
+  state => ({test:state.test}),
+  {
+    demo1:createDemo1Action
+  }
+)(Form.create({ name: 'Login' })(Login))
