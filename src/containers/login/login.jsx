@@ -98,7 +98,7 @@ class Login extends Component {
               <Button type="primary" htmlType="submit" className="login-form-button">
                 登录
               </Button>
-                或者 <a href="/#">现在注册!</a>
+                或者 <a href="/#">联系管理员增加权限!</a>
             </Form.Item>
           </Form>
         </section>
