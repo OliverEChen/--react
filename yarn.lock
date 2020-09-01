@@ -2442,7 +2442,7 @@ axobject-query@^2.0.2:
   resolved "https://registry.npm.taobao.org/axobject-query/download/axobject-query-2.2.0.tgz?cache=0&sync_timestamp=1592784839824&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Faxobject-query%2Fdownload%2Faxobject-query-2.2.0.tgz#943d47e10c0b704aa42275e20edf3722648989be"
   integrity sha1-lD1H4QwLcEqkInXiDt83ImSJib4=
 
-babel-code-frame@^6.22.0, babel-code-frame@^6.26.0:
+babel-code-frame@^6.22.0:
   version "6.26.0"
   resolved "https://registry.npm.taobao.org/babel-code-frame/download/babel-code-frame-6.26.0.tgz#63fd43f7dc1e3bb7ce35947db8fe369a3f58c74b"
   integrity sha1-Y/1D99weO7fONZR9uP42mj9Yx0s=
@@ -2494,13 +2494,6 @@ babel-loader@8.1.0:
     pify "^4.0.1"
     schema-utils "^2.6.5"
 
-babel-messages@^6.23.0:
-  version "6.23.0"
-  resolved "https://registry.npm.taobao.org/babel-messages/download/babel-messages-6.23.0.tgz#f3cdf4703858035b2a2951c6ec5edf6c62f2630e"
-  integrity sha1-8830cDhYA1sqKVHG7F7fbGLyYw4=
-  dependencies:
-    babel-runtime "^6.22.0"
-
 babel-plugin-dynamic-import-node@^2.3.3:
   version "2.3.3"
   resolved "https://registry.npm.taobao.org/babel-plugin-dynamic-import-node/download/babel-plugin-dynamic-import-node-2.3.3.tgz#84fda19c976ec5c6defef57f9427b3def66e17a3"
@@ -2547,24 +2540,10 @@ babel-plugin-named-asset-import@^0.3.6:
   resolved "https://registry.npm.taobao.org/babel-plugin-named-asset-import/download/babel-plugin-named-asset-import-0.3.6.tgz?cache=0&sync_timestamp=1596647132876&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fbabel-plugin-named-asset-import%2Fdownload%2Fbabel-plugin-named-asset-import-0.3.6.tgz#c9750a1b38d85112c9e166bf3ef7c5dbc605f4be"
   integrity sha1-yXUKGzjYURLJ4Wa/PvfF28YF9L4=
 
-babel-plugin-syntax-decorators@^6.1.18:
-  version "6.13.0"
-  resolved "https://registry.npm.taobao.org/babel-plugin-syntax-decorators/download/babel-plugin-syntax-decorators-6.13.0.tgz#312563b4dbde3cc806cee3e416cceeaddd11ac0b"
-  integrity sha1-MSVjtNvePMgGzuPkFszurd0RrAs=
-
 babel-plugin-syntax-object-rest-spread@^6.8.0:
   version "6.13.0"
   resolved "https://registry.npm.taobao.org/babel-plugin-syntax-object-rest-spread/download/babel-plugin-syntax-object-rest-spread-6.13.0.tgz#fd6536f2bce13836ffa3a5458c4903a597bb3bf5"
   integrity sha1-/WU28rzhODb/o6VFjEkDpZe7O/U=
-
-babel-plugin-transform-decorators-legacy@^1.3.5:
-  version "1.3.5"
-  resolved "https://registry.npm.taobao.org/babel-plugin-transform-decorators-legacy/download/babel-plugin-transform-decorators-legacy-1.3.5.tgz#0e492dffa0edd70529072887f8aa86d4dd8b40a1"
-  integrity sha1-Dkkt/6Dt1wUpByiH+KqG1N2LQKE=
-  dependencies:
-    babel-plugin-syntax-decorators "^6.1.18"
-    babel-runtime "^6.2.0"
-    babel-template "^6.3.0"
 
 babel-plugin-transform-object-rest-spread@^6.26.0:
   version "6.26.0"
@@ -2608,49 +2587,13 @@ babel-preset-react-app@^9.1.2:
     babel-plugin-macros "2.8.0"
     babel-plugin-transform-react-remove-prop-types "0.4.24"
 
-babel-runtime@6.x, babel-runtime@^6.2.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0:
+babel-runtime@6.x, babel-runtime@^6.23.0, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.npm.taobao.org/babel-runtime/download/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   integrity sha1-llxwWGaOgrVde/4E/yM3vItWR/4=
   dependencies:
     core-js "^2.4.0"
     regenerator-runtime "^0.11.0"
-
-babel-template@^6.3.0:
-  version "6.26.0"
-  resolved "https://registry.npm.taobao.org/babel-template/download/babel-template-6.26.0.tgz#de03e2d16396b069f46dd9fff8521fb1a0e35e02"
-  integrity sha1-3gPi0WOWsGn0bdn/+FIfsaDjXgI=
-  dependencies:
-    babel-runtime "^6.26.0"
-    babel-traverse "^6.26.0"
-    babel-types "^6.26.0"
-    babylon "^6.18.0"
-    lodash "^4.17.4"
-
-babel-traverse@^6.26.0:
-  version "6.26.0"
-  resolved "https://registry.npm.taobao.org/babel-traverse/download/babel-traverse-6.26.0.tgz#46a9cbd7edcc62c8e5c064e2d2d8d0f4035766ee"
-  integrity sha1-RqnL1+3MYsjlwGTi0tjQ9ANXZu4=
-  dependencies:
-    babel-code-frame "^6.26.0"
-    babel-messages "^6.23.0"
-    babel-runtime "^6.26.0"
-    babel-types "^6.26.0"
-    babylon "^6.18.0"
-    debug "^2.6.8"
-    globals "^9.18.0"
-    invariant "^2.2.2"
-    lodash "^4.17.4"
-
-babel-types@^6.26.0:
-  version "6.26.0"
-  resolved "https://registry.npm.taobao.org/babel-types/download/babel-types-6.26.0.tgz#a3b073f94ab49eb6fa55cd65227a334380632497"
-  integrity sha1-o7Bz+Uq0nrb6Vc1lInozQ4BjJJc=
-  dependencies:
-    babel-runtime "^6.26.0"
-    esutils "^2.0.2"
-    lodash "^4.17.4"
-    to-fast-properties "^1.0.3"
 
 babylon@^6.18.0:
   version "6.18.0"
@@ -3891,7 +3834,12 @@ data-urls@^1.0.0, data-urls@^1.1.0:
     whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
 
-debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.8, debug@^2.6.9:
+dayjs@^1.8.34:
+  version "1.8.34"
+  resolved "https://registry.npm.taobao.org/dayjs/download/dayjs-1.8.34.tgz?cache=0&sync_timestamp=1597892482636&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdayjs%2Fdownload%2Fdayjs-1.8.34.tgz#d3ad33cc43d6b0f24cb8686b90aad2c653708069"
+  integrity sha1-060zzEPWsPJMuGhrkKrSxlNwgGk=
+
+debug@2.6.9, debug@^2.1.3, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.npm.taobao.org/debug/download/debug-2.6.9.tgz?cache=0&sync_timestamp=1589891993007&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdebug%2Fdownload%2Fdebug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   integrity sha1-XRKFFd8TT/Mn6QpMk/Tgd6U2NB8=
@@ -5299,11 +5247,6 @@ globals@^12.1.0:
   integrity sha1-oYgTV2pBsAokqX5/gVkYwuGZJfg=
   dependencies:
     type-fest "^0.8.1"
-
-globals@^9.18.0:
-  version "9.18.0"
-  resolved "https://registry.npm.taobao.org/globals/download/globals-9.18.0.tgz?cache=0&sync_timestamp=1596709362801&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fglobals%2Fdownload%2Fglobals-9.18.0.tgz#aa3896b3e69b487f17e31ed2143d69a8e30c2d8a"
-  integrity sha1-qjiWs+abSH8X4x7SFD1pqOMMLYo=
 
 globby@8.0.2:
   version "8.0.2"
@@ -6850,6 +6793,13 @@ jsonify@~0.0.0:
   version "0.0.0"
   resolved "https://registry.npm.taobao.org/jsonify/download/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
   integrity sha1-LHS27kHZPKUbe1qu6PUDYx0lKnM=
+
+jsonp@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.npm.taobao.org/jsonp/download/jsonp-0.2.1.tgz#a65b4fa0f10bda719a05441ea7b94c55f3e15bae"
+  integrity sha1-pltPoPEL2nGaBUQep7lMVfPhW64=
+  dependencies:
+    debug "^2.1.3"
 
 jsprim@^1.2.2:
   version "1.4.1"
@@ -10359,6 +10309,11 @@ schema-utils@^2.5.0, schema-utils@^2.6.0, schema-utils@^2.6.1, schema-utils@^2.6
     ajv "^6.12.2"
     ajv-keywords "^3.4.1"
 
+screenfull@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.npm.taobao.org/screenfull/download/screenfull-5.0.2.tgz#b9acdcf1ec676a948674df5cd0ff66b902b0bed7"
+  integrity sha1-uazc8exnapSGdN9c0P9muQKwvtc=
+
 select-hose@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/select-hose/download/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
@@ -11201,11 +11156,6 @@ to-arraybuffer@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/to-arraybuffer/download/to-arraybuffer-1.0.1.tgz#7d229b1fcc637e466ca081180836a7aabff83f43"
   integrity sha1-fSKbH8xjfkZsoIEYCDanqr/4P0M=
-
-to-fast-properties@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.npm.taobao.org/to-fast-properties/download/to-fast-properties-1.0.3.tgz#b83571fa4d8c25b82e231b06e3a3055de4ca1a47"
-  integrity sha1-uDVx+k2MJbguIxsG46MFXeTKGkc=
 
 to-fast-properties@^2.0.0:
   version "2.0.0"

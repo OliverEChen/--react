@@ -15,9 +15,9 @@ import logo from './images/logo.png'
 )
 @Form.create()
 class Login extends Component {
-  componentDidMount(){
-    console.log(this.props);
-  }
+  // componentDidMount(){
+  //   console.log(this.props);
+  // }
 
   handleSubmit = e => {
     e.preventDefault();
@@ -27,13 +27,13 @@ class Login extends Component {
         let result = await reqLogin(username,password)
         const {status,data,msg} = result
         if(status === 0){
-          console.log(data);
+          // console.log(data);
           this.props.saveUserInfo(data)
           this.props.history.replace('/admin')
         }else {
           message.warning(msg)
         }
-        console.log(result);
+        // console.log(result);
       }else {
         message.error('输入有误，请重新输入')
       }
