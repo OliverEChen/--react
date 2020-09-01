@@ -7,6 +7,13 @@ import {createSaveUserInfoAction} from '../../redux/actions/login_action'
 import './css/login.less'
 import logo from './images/logo.png'
 
+@connect(
+  state => ({isLogin:state.userInfo.isLogin}),
+  {
+    saveUserInfo:createSaveUserInfoAction
+  }
+)
+@Form.create()
 class Login extends Component {
   componentDidMount(){
     console.log(this.props);
@@ -106,10 +113,11 @@ class Login extends Component {
     )
   }
 }
-Form.create({ name: 'Login' })(Login);
-export default connect(
-  state => ({isLogin:state.userInfo.isLogin}),
-  {
-    saveUserInfo:createSaveUserInfoAction
-  }
-)(Form.create({ name: 'Login' })(Login))
+export default Login
+// Form.create({ name: 'Login' })(Login);
+// export default connect(
+//   state => ({isLogin:state.userInfo.isLogin}),
+//   {
+//     saveUserInfo:createSaveUserInfoAction
+//   }
+// )(Form.create({ name: 'Login' })(Login))
