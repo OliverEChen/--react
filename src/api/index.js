@@ -9,6 +9,7 @@ export const reqCategoryList = ()=> myAxios.get(`${BASE_URL}/manage/category/lis
 // 获取天气信息
 export const reqWeather = ()=> {
   // return new Promise((resolve,reject)=>{
+    // http://v.juhe.cn/weather/index?cityname=${CITY}&dtype=&format=&key=${WHEATHER_AK}
     jsonp(`https://v1.alapi.cn/api/shici?${TYPE}`,{timeout:2000},(err,data)=>{
       if(err){
         message.error('请求接口失败')
