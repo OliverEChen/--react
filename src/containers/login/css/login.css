@@ -33,6 +33,7 @@ body #root .app {
 .login header h1 {
   color: white;
   font-size: 30px;
+  margin-bottom: 0;
 }
 .login section {
   width: 400px;
@@ -44,6 +45,7 @@ body #root .app {
 .login section h1 {
   font-size: 25px;
   text-align: center;
+  margin-bottom: 20px;
 }
 .login section .login-form-button {
   width: 100%;

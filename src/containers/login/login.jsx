@@ -5,7 +5,7 @@ import {Redirect} from 'react-router-dom'
 import {reqLogin} from '../../api/index'
 import {createSaveUserInfoAction} from '../../redux/actions/login_action'
 import './css/login.less'
-import logo from './images/logo.png'
+import logo from '../../static/imgs/logo.png'
 
 @connect(
   state => ({isLogin:state.userInfo.isLogin}),
@@ -57,7 +57,7 @@ class Login extends Component {
     const { getFieldDecorator } = this.props.form
     const { isLogin } = this.props
     if(isLogin){
-      return <Redirect to='/admin'/>
+      return <Redirect to='/admin/home'/>
     }
     return (
       <div className="login">

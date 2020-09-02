@@ -7,3 +7,4 @@ export const TYPE = 'all'
 // 诗词类型:all 所有类型 shuqing 抒情 siji 四季 
 // shanshui 山水 tianqi 天气 renwu 人物 shenghuo 生活 
 // jieri 节日 dongwu 动物 zhiwu 植物 shiwu 食物
+export const PAGE_SIZE=5

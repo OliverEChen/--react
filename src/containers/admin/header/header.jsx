@@ -1,17 +1,23 @@
 import React,{Component} from 'react'
 import {Icon,Button,Modal} from 'antd'
+import {withRouter} from 'react-router-dom'
 import screenfull from 'screenfull'
 import {connect} from 'react-redux'
 import dayjs from 'dayjs'
+import menuList from '../../../config/menu_config'
 import {createDeleteUserInfoAction} from '../../../redux/actions/login_action'
 import {reqWeather} from '../../../api/index'
 import './css/header.less'
 const { confirm } = Modal
 
 @connect(
-  state => ({userInfo:state.userInfo}),
+  state => ({
+    userInfo:state.userInfo,
+    title:state.title
+  }),
   {deleteUser:createDeleteUserInfoAction}
 )
+@withRouter
 class Header extends Component {
   state = {
     isFull:false,
@@ -19,14 +25,19 @@ class Header extends Component {
     weatherInfo:{}
   }
   componentDidMount(){
+    //全屏切换
     screenfull.on('change',()=>{
       let isFull = !this.state.isFull
       this.setState({isFull})
     })
+    //更新时间
     this.timer = setInterval(() => {
       this.setState({date:dayjs().format('YYYY年 MM月DD日 HH时:mm分:ss秒')})
     }, 1000)
+    //获取天气
     this.getWeather()
+    //展示当前菜单标题
+    this.getTitle()
   }
   componentWillUnmount(){
     clearInterval(this.timer)
@@ -35,6 +46,21 @@ class Header extends Component {
     let weather = await reqWeather()
     this.setState({weatherInfo:weather})
     // console.log(weather);
+  }
+  getTitle = () => {
+    let pathKey = this.props.location.pathname.split('/').reverse()[0]
+    let title = ''
+    menuList.forEach((item)=>{
+      if(item.children instanceof Array){
+        let tmp = item.children.find((citem)=>{
+          return citem.key === pathKey
+        })
+        if(tmp) title = tmp.title
+      }else {
+        if(pathKey === item.key) title = item.title
+      }
+    })
+    this.setState({title})
   }
   // 切换全屏
   fullScreen = () => {
@@ -68,7 +94,7 @@ class Header extends Component {
         </div>
         <div className="header-bottom">
           <div className="header-bottom-left">
-            柱状图
+            {this.props.title || this.state.title}
           </div>
           <div className="header-bottom-right">
             {this.state.date}&nbsp;&nbsp;

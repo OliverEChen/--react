@@ -1,7 +1,7 @@
 import myAxios from './myAxios'
-import jsonp from 'jsonp'
-import {message} from 'antd'
-import {BASE_URL,TYPE} from '../config/index'
+// import jsonp from 'jsonp'
+// import {message} from 'antd'
+import {BASE_URL,/*TYPE*/} from '../config/index'
 
 export const reqLogin = (username,password) => myAxios.post(`${BASE_URL}/login`,{username,password})
 // 获取商品列表
@@ -10,19 +10,22 @@ export const reqCategoryList = ()=> myAxios.get(`${BASE_URL}/manage/category/lis
 export const reqWeather = ()=> {
   // return new Promise((resolve,reject)=>{
     // http://v.juhe.cn/weather/index?cityname=${CITY}&dtype=&format=&key=${WHEATHER_AK}
-    jsonp(`https://v1.alapi.cn/api/shici?${TYPE}`,{timeout:2000},(err,data)=>{
-      if(err){
-        message.error('请求接口失败')
-        console.log(err);
-        return new Promise(()=>{})
-      }else{
-        console.log(data);
-        // const {city,temperature,weather,wind} = data.result.today
-        // console.log(city,temperature,weather,wind);
-        // let weatherObj = {city,temperature,weather,wind}
-        // resolve(weatherObj)
-      }
-    })
+    // jsonp(`https://v1.alapi.cn/api/shici?${TYPE}`,{timeout:2000},(err,data)=>{
+    //   if(err){
+    //     // message.error('请求接口失败')
+    //     console.log(err);
+    //     return new Promise(()=>{})
+    //   }else{
+    //     console.log(data);
+    //     // const {city,temperature,weather,wind} = data.result.today
+    //     // console.log(city,temperature,weather,wind);
+    //     // let weatherObj = {city,temperature,weather,wind}
+    //     // resolve(weatherObj)
+    //   }
+    // })
   // })
 }
-
+//新增商品的分类
+export const reqAddCategory = ({categoryName}) => myAxios.post(`${BASE_URL}/manage/category/add`,{categoryName})
+//更新商品分类
+export const reqUpdateCategory = ({categoryName,categoryId}) => myAxios.post(`${BASE_URL}/manage/category/update`,{categoryName,categoryId})

@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import { Layout } from 'antd'
 import {createDeleteUserInfoAction} from '../../redux/actions/login_action'
 import Header from './header/header'
+import LeftNav from './left_nav/left_nav'
 import './css/admin.css'
 import Home from '../../components/home/home'
 import Category from '../category/category'
@@ -29,13 +30,14 @@ class Admin extends Component {
   logOut = () => {
     this.props.deleteUserInfo()
   }
-  
   render(){
     const {isLogin} = this.props.userInfo
     if(isLogin){
       return (
         <Layout className="admin">
-          <Sider className="sider">Sider</Sider>
+          <Sider className="sider">
+            <LeftNav></LeftNav>
+          </Sider>
           <Layout>
             <Header>header</Header>
             <Content className="content">
@@ -46,7 +48,7 @@ class Admin extends Component {
                 <Route path="/admin/user" component={User}/> 
                 <Route path="/admin/role" component={Role}/> 
                 <Route path="/admin/charts/bar" component={Bar}/> 
-                <Route path="/admin/charts/lie" component={Line}/> 
+                <Route path="/admin/charts/line" component={Line}/> 
                 <Route path="/admin/charts/pie" component={Pie}/> 
                 <Redirect to="/admin/home"/>
               </Switch>
