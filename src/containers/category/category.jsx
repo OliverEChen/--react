@@ -42,8 +42,7 @@ class Category extends Component {
         message.success('新增商品分类成功')
         let categoryList = [...this.state.categoryList]
         categoryList.unshift(data)
-        this.setState({categoryList})
-        this.setState({visible: false,})//隐藏弹窗
+        this.setState({visible: false,categoryList})//隐藏弹窗
         this.props.form.resetFields()//重置表单
       }else message.error(msg)
       

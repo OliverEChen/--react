@@ -29,3 +29,12 @@ export const reqWeather = ()=> {
 export const reqAddCategory = ({categoryName}) => myAxios.post(`${BASE_URL}/manage/category/add`,{categoryName})
 //更新商品分类
 export const reqUpdateCategory = ({categoryName,categoryId}) => myAxios.post(`${BASE_URL}/manage/category/update`,{categoryName,categoryId})
+//请求商品分页列表
+export const reqProductList = (pageNum,pageSize)=> myAxios.get(`${BASE_URL}/manage/product/list`,{params:{pageNum,pageSize}})
+//请求更新商品在售状态
+export const reqUpdateProdStatus = (productId,status) => myAxios.post(`${BASE_URL}/manage/product/updateStatus`,{productId,status})
+//搜索商品
+export const reqsearchProduct = (pageNum,pageSize,searchType,keyword) => myAxios.get(`${BASE_URL}/manage/product/search`,{params:{pageNum,pageSize,[searchType]:keyword}})
+//获取商品详细信息
+export const reqProductById = (productId)=> myAxios.get(`${BASE_URL}/manage/product/info`,{params:{productId}})
+
