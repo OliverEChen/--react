@@ -32,7 +32,6 @@ class Product extends Component {
     }
 
     const {status,data} = result
-    console.log(data);
     if(status===0) {
       this.setState({
         productList:data.list,
@@ -120,7 +119,7 @@ class Product extends Component {
           return (
             <div>
               <Button type='link' onClick={()=>{this.props.history.push(`/admin/prod_about/product/detail/${item._id}`)}}>详情</Button><br/>
-              <Button type='link' onClick={()=>{this.props.history.push('/admin/prod_about/product/add_update/2')}}>修改</Button>
+              <Button type='link' onClick={()=>{this.props.history.push(`/admin/prod_about/product/add_update/${item._id}`)}}>修改</Button>
             </div>
           )
         }
