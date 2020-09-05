@@ -54,7 +54,7 @@ export default class PicturesWall extends Component {
     }
     if(file.status === 'removed'){
       let result = await reqDeletePicture(file.name)
-      const {status,data,msg} = result
+      const {status,msg} = result
       if(status === 0) message.success('删除图片成功')
       else message.error(msg)
     }

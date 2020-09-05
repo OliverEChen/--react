@@ -42,6 +42,22 @@ export const reqDeletePicture = (name) => myAxios.post(`${BASE_URL}/manage/img/d
 export const reqAddProduct = (productObj) => myAxios.post(`${BASE_URL}/manage/product/add`,{...productObj})
 //更新商品
 export const reqUpdateProduct = (productObj) => myAxios.post(`${BASE_URL}/manage/product/update`,{...productObj})
+//请求角色列表
+export const reqRoleList = ()=> myAxios.get(`${BASE_URL}/manage/role/list`)
+//请求添加角色列表
+export const reqAddRole = ({roleName})=> myAxios.post(`${BASE_URL}/manage/role/add`,{roleName})
+//请求设置角色权限
+export const reqAuthRole = (roleObj)=> myAxios.post(`${BASE_URL}/manage/role/update`,{...roleObj,auth_time:Date.now()})
+//请求添加用户
+export const reqAddUser = (addUserObj)=> myAxios.post(`${BASE_URL}/manage/user/add`,{...addUserObj,auth_time:Date.now()})
+//请求更新用户
+export const reqUpdateUser = (updateUserObj)=> myAxios.post(`${BASE_URL}/manage/user/update`,{...updateUserObj,auth_time:Date.now()})
+// 请求用户列表
+export const reqUserList = ()=> myAxios.get(`${BASE_URL}/manage/user/list`)
+// 请求删除用户
+export const reqDeleteUser = (userId)=> myAxios.post(`${BASE_URL}/manage/user/delete`,{userId})
+
+
 
 
 

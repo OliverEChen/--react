@@ -9,43 +9,56 @@ import './left_nav.css'
 const { SubMenu,Item } = Menu
 
 @connect(
-  state => ({}),
+  state => ({
+    menus:state.userInfo.user.role.menus,
+    username:state.userInfo.user.username
+  }),
   {
     saveTitle:createSaveTitleAction
   }
 )
 @withRouter
 class LeftNav extends Component {
-  save = () => {
-
+  hasAuth = (item) => {
+    const {menus,username} = this.props
+    if(username==='admin'){
+      return true
+    }else if(!item.children){
+      return menus.find((item2)=>{return item2 === item.key})
+    } else if(item.children){
+      return item.children.some((item3)=>{return menus.indexOf(item3.key!==-1)})
+    }
+    
   }
   createMenu = (target)=> {
     return target.map((item)=>{
-      if(!item.children){
-        return (
-          <Item key={item.key} onClick={()=>{this.props.saveTitle(item.title)}}>
-            <Link to={item.path}>
-              <Icon type={item.icon} />
-              <span>{item.title}</span>
-            </Link>
-          </Item>
-        )
-      }else {
-        return (
-          <SubMenu
-            key={item.key}
-            title={
-              <span>
+      if(this.hasAuth(item)){
+        if(!item.children){
+          return (
+            <Item key={item.key} onClick={()=>{this.props.saveTitle(item.title)}}>
+              <Link to={item.path}>
                 <Icon type={item.icon} />
                 <span>{item.title}</span>
-              </span>
-            }
-          >
-            {
-              this.createMenu(item.children)
-            }
-          </SubMenu>
-        )
+              </Link>
+            </Item>
+          )
+        }else {
+          return (
+            <SubMenu
+              key={item.key}
+              title={
+                <span>
+                  <Icon type={item.icon} />
+                  <span>{item.title}</span>
+                </span>
+              }
+            >
+              {
+                this.createMenu(item.children)
+              }
+            </SubMenu>
+          )
+        }
       }
     })
   }
